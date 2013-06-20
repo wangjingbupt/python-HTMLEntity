@@ -24,7 +24,7 @@ def decode(source):
         entitie = entitie.replace('&', '')
         entitie = entitie.replace(';', '')
         source = source.replace('&%s;' % entitie, unichr(name2codepoint[entitie]))
-    for entitie in re.findall('&#x(?:[0-9]+);', source):
+    for entitie in re.findall('&#x(?:[a-f0-9]+);', source):
         entitie = entitie.replace('&#x', '')
         entitie = entitie.replace(';', '')
         iEntitie = int(entitie,16)

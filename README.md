@@ -16,30 +16,39 @@ For install python-HTMLEntity, run on terminal: ::
 Using python-HTMLEntity
 ==================
 
-encoding
+encode
 --------
 
 Normal encode ::
 
-    import htmlentities
+    import HTMLEntity
 
-    htmlentities.encode('<') # returns "&lt"
+    HTMLEntity.encode('<') # returns "&lt"
 
 Deal with Chinese or other Special character, please use unicode string ::
 
-    import htmlentities
+    import HTMLEntity
 		
-		t = '测试'.decode('utf-8') // '测试'.decode('gbk')
+		t = '测试'.decode('utf-8') # '测试'.decode('gbk')
 
-		htmlentities.encode(t) # returns ""
+		HTMLEntity.encode(t) # returns "&#27979;&#35797;"
 
-decoding
+decode
 --------
 
-    import htmlentities
+    import HTMLEntity
 
-    htmlentities.decode('&lt') # returns "<"
+    HTMLEntity.decode('&lt') # returns "<"
     
-		htmlentities.decode('&lt') # returns ""
+		HTMLEntity.decode('&#27979;&#35797;') # returns "测试"
 
+		HTMLEntity.decode('&#x5b9e;&#x4f53;&#x5b57;&#x7b26;') # returns "实体字符" 
 
+Thanks
+===========
+	This work is depend on https://github.com/cobrateam/python-htmlentities
+
+Development
+===========
+
+  contact wangjingbupt@gmail.com

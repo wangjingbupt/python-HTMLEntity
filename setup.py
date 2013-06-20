@@ -1,5 +1,5 @@
 from setuptools import setup, find_packages
-from htmlEntity import __version__
+from HTMLEntity import __version__
 
 README = open('README.md').read()
 
