@@ -45,7 +45,7 @@ decode
 
 Thanks
 ===========
-	This work is depend on https://github.com/cobrateam/python-htmlentities
+	This work is base on https://github.com/cobrateam/python-htmlentities
 
 About 
 ===========
