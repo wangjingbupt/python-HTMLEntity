@@ -3,7 +3,7 @@ from htmlentitydefs import codepoint2name, name2codepoint
 import re
 
 
-__version__ = '0.2.1'
+__version__ = '1.0.2'
 
 
 def encode(source):
@@ -24,7 +24,7 @@ def decode(source):
         entitie = entitie.replace('&', '')
         entitie = entitie.replace(';', '')
         source = source.replace('&%s;' % entitie, unichr(name2codepoint[entitie]))
-    for entitie in re.findall('&#x(?:[a-f0-9]+);', source):
+    for entitie in re.findall('&#x(?:[A-Fa-f0-9]+);', source):
         entitie = entitie.replace('&#x', '')
         entitie = entitie.replace(';', '')
         iEntitie = int(entitie,16)
@@ -34,4 +34,3 @@ def decode(source):
         entitie = entitie.replace(';', '')
         source = source.replace('&#%s;' % entitie, unichr(int(entitie)))
     return source
-
